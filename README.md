@@ -1,15 +1,16 @@
-﻿# Proyecto de Sistemas Distribuidos
-﻿Mensajería con traducción a otro idioma basado en pub/sub
-﻿
-﻿
-﻿Librerias necesarias:
-﻿
-﻿Apache ActiveMQ 5.9 (se encuentra en la carpeta lib)
-﻿Microsoft Translator Java API (se encuentra en la carpeta lib)
-﻿
-﻿La clase principal y unica necesaria es:
-﻿
-﻿MainFrame.java (se encuentra en la carpeta src)
+# Proyecto de Sistemas Distribuidos
+
+Mensajería con traducción a otro idioma basado en pub/sub
+
+
+Librerias necesarias:
+
+- Apache ActiveMQ 5.9 (se encuentra en la carpeta lib)
+- Microsoft Translator Java API (se encuentra en la carpeta lib)
+
+La clase principal y unica necesaria es:
+
+- MainFrame.java (se encuentra en la carpeta src)
 
 Debe tener los siguientes archivos en el mismo directorio
 - activemq-all-5.9.0.jar
