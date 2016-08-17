@@ -21,6 +21,7 @@ import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import com.memetix.mst.language.Language;
 import com.memetix.mst.translate.Translate;
+import com.memetix.mst.detect.Detect;
 
 /**
  *
@@ -339,19 +340,24 @@ public class MainFrame extends javax.swing.JFrame {
                 Translate.setClientSecret("e3HU8oc5IeOOYg7Ika5Kb6Col4ntqL/HkbyQtBMC0Ew=");
                 String usuario = map.getString("usuario");
                 String texto = map.getString("texto");
+                //Detección del idioma
+                Language detectedLanguage = Detect.execute(texto);
                 String idioma = comboIdioma.getSelectedItem().toString();
-                if (idioma.equals("Ingles")){
-                String translatedText = Translate.execute(texto, Language.SPANISH, Language.ENGLISH);
-                textArea.append(usuario + ": " + translatedText + "\n");
+                //Selección del lenguaje a traducir
+                if (idioma.equals("Ingles") && detectedLanguage.getName(Language.ENGLISH).equals("Spanish")){
+                    String translatedText = Translate.execute(texto, Language.SPANISH, Language.ENGLISH);
+                    textArea.append(usuario + ": " + translatedText + "\n");
+                }else if (idioma.equals("Ingles") && detectedLanguage.getName(Language.ENGLISH).equals("English")){
+                    textArea.append(usuario + ": " + texto + "\n");
                 }else if (idioma.equals("Frances")){
-                String translatedText = Translate.execute(texto, Language.SPANISH, Language.FRENCH);
-                textArea.append(usuario + ": " + translatedText + "\n");
+                    String translatedText = Translate.execute(texto, Language.SPANISH, Language.FRENCH);
+                    textArea.append(usuario + ": " + translatedText + "\n");
                 }else if (idioma.equals("Portugues")){
-                String translatedText = Translate.execute(texto, Language.SPANISH, Language.PORTUGUESE);
-                textArea.append(usuario + ": " + translatedText + "\n");
+                    String translatedText = Translate.execute(texto, Language.SPANISH, Language.PORTUGUESE);
+                    textArea.append(usuario + ": " + translatedText + "\n");
                 }else if (idioma.equals("Aleman")){
-                String translatedText = Translate.execute(texto, Language.SPANISH, Language.GERMAN);
-                textArea.append(usuario + ": " + translatedText + "\n");
+                    String translatedText = Translate.execute(texto, Language.SPANISH, Language.GERMAN);
+                    textArea.append(usuario + ": " + translatedText + "\n");
                 }
              } catch (JMSException e) {
                 e.printStackTrace();
