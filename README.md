@@ -2,6 +2,15 @@
 
 Mensajería con traducción a otro idioma basado en pub/sub
 
+Se debe iniciar el servidor de apache activeMQ
+Descargar Agente de mensajeria en:
+http://activemq.apache.org/activemq-590-release.html
+
+Extraer los paquetes y agregarlos en el directorio de preferencia
+Ejecutar el comando ./activemq start en el directorio extraido
+
+Puede encontrar informacion mas detallada sobre como levantar el agente de mensajeria en:
+http://activemq.apache.org/getting-started.html#GettingStarted-StartingActiveMQStartingActiveMQ
 
 Librerias necesarias:
 
@@ -20,3 +29,4 @@ Debe tener los siguientes archivos en el mismo directorio
 
 Para compilar el proyecto:
 Ejecutar make en una linea de comandos en el directorio donde se encuentran los archivos
+
